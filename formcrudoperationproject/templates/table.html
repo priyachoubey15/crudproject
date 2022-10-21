@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>name</th>
+        <th>roll</th>
+        <th>city</th>
+        <th>modification</th>
+    </tr>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.roll}}</td>
+        <td>{{i.city}}</td>
+        <td><button><a href="{% url 'delete' i.id %}">delete</a></button></td>
+        <td><button><a href="{% url 'update' i.id %}">update</a></button></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
